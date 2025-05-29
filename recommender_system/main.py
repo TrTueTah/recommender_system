@@ -49,7 +49,7 @@ class RecommendRequest(BaseModel):
     account_id: int
     nrec_items: int = 10
 
-@app.get("/recommend")
+@app.post("/recommend")
 def recommender(data: RecommendRequest):
     try:
         recommendations = recommend(
