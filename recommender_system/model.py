@@ -95,7 +95,7 @@ def load_interactions():
     interactions = joblib.load('interactions.pkl')
     return interactions
 
-def recommend(model, interactions, account_id, account_dict, item_dict, nrec_items=10, show=True):
+def recommend_collaborative_filtering(model, interactions, account_id, account_dict, item_dict, nrec_items=10, show=True):
     """
     Trả về danh sách post_id của top-k bài viết được gợi ý cho account_id.
     Args:

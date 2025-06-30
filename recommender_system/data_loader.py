@@ -34,4 +34,18 @@ def load_post_mappings():
     reverse_mapping = dict(zip(post_ids, titles))  # post_id -> title
 
     return df_title, normal_mapping, reverse_mapping
+def load_post_tags():
+    conn = psycopg2.connect(**DB_CONFIG)
 
+    query = "SELECT post_id, tag_id FROM post_tags"
+    df = pd.read_sql_query(query, conn)
+    conn.close()
+    return df
+
+def load_tags():
+    conn = psycopg2.connect(**DB_CONFIG)
+    query = "SELECT id, name FROM tags"
+    df = pd.read_sql_query(query, conn)
+    conn.close()
+    return df
+    

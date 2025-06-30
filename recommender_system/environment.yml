@@ -1,0 +1,18 @@
+name: recommender_env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - fastapi
+  - uvicorn
+  - psycopg2
+  - numpy
+  - pandas
+  - scikit-learn
+  - lightfm
+  - matplotlib
+  - seaborn
+  - pip:
+      - apscheduler
