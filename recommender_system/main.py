@@ -98,7 +98,7 @@ def recommend_content_based(data: RecommendRequest):
     # Chọn các post có score cao nhất
     top_posts = tag_df.sort_values('score', ascending=False).index[:data.nrec_items].tolist()
 
-    return top_posts
+    return {"recommended_post_ids": top_posts}
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
